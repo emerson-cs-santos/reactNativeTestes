@@ -2,6 +2,7 @@ import React from 'react';
 import AppLoading from 'expo-app-loading';
 import { Text, View } from 'react-native';
 import { ThemeProvider } from "styled-components/native"
+import { StatusBar } from 'expo-status-bar';
 
 import {
     useFonts,
@@ -12,7 +13,7 @@ import {
     Poppins_800ExtraBold
 } from "@expo-google-fonts/poppins";
 
-import { DMSans_400Regular} from "@expo-google-fonts/dm-sans"
+import { DMSans_400Regular } from "@expo-google-fonts/dm-sans"
 import { DMSerifDisplay_400Regular } from '@expo-google-fonts/dm-serif-display';
 
 import COLORS from "../src/styles/theme";
@@ -27,7 +28,7 @@ import COLORS from "../src/styles/theme";
 
 export default function App() {
 
-    const [fontsLoaded] = useFonts ({
+    const [fontsLoaded] = useFonts({
         Poppins_300Light,
         Poppins_400Regular,
         Poppins_500Medium,
@@ -37,25 +38,28 @@ export default function App() {
         DMSerifDisplay_400Regular
     })
 
-    if ( !fontsLoaded ) {
-        return <AppLoading/>
+    if (!fontsLoaded) {
+        return <AppLoading />
     }
 
     return (
         <ThemeProvider theme={COLORS}>
+            <StatusBar style="dark" translucent backgroundColor="transparent" />
             <View
-            style={{
-                flex: 1,
-                justifyContent: "center",
-                alignItems: "center",
-            }}
+                style={{
+                    flex: 1,
+                    justifyContent: "center",
+                    alignItems: "center",
+
+                    backgroundColor: COLORS.COLORS.BLUE1,
+                }}
             >
                 <Text>Wallet/Carteira App</Text>
             </View>
         </ThemeProvider>
     );
 
-  }
+}
 
 //export { App };
 
