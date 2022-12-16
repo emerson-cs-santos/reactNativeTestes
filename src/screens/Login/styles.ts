@@ -24,7 +24,7 @@ export const Title = styled.Text`
 `;
 
 export const Description = styled.Text`
-    margin-top: ${RFValue(60)}px;
+    margin-top: ${RFValue(20)}px;
     font-size: ${RFValue(15)}px;
     margin-bottom: ${RFValue(10)}px;
     font-family: ${ ( { theme } ) => theme.FONTS.POPPINSLIGHT };
